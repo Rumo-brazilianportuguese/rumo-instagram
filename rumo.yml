@@ -1,0 +1,78 @@
+# Rumo Instagram: posts once a day at 18:00 UK through Meta's free Instagram API.
+# GitHub's clock is UTC, so there are runs at both 17:05 and 18:05 UTC (summer and winter);
+# the kit itself decides whether a slot is open (18:00-23:00 UK) and never posts twice.
+# Two later runs catch up if GitHub skips one. Trial Reels: Tuesday and Thursday 12:00 UK.
+name: Rumo Instagram
+
+on:
+  schedule:
+    - cron: "5 17 * * *"
+    - cron: "5 18 * * *"
+    - cron: "35 19 * * *"
+    - cron: "35 20 * * *"
+    - cron: "5 11 * * 2,4"
+    - cron: "5 12 * * 2,4"
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "What to run"
+        type: choice
+        default: daily
+        options:
+          - daily
+          - build
+          - connect
+          - launch
+          - check
+          - status
+          - trial on
+          - trial off
+          - build --rerender
+          - build --fresh
+
+permissions:
+  contents: write   # save progress (posts.json) and the 'media' branch with the slides
+  issues: write     # open an issue when a run stops, so GitHub emails you
+
+concurrency:
+  group: rumo
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}   # the newest commit, not the one the run was queued at
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Run
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          RUMO_NO_BROWSER: "1"
+          CMD: ${{ inputs.command || 'daily' }}
+        run: python rumo.py $CMD
+      - name: Previews (download from this run's page)
+        if: always() && startsWith(inputs.command, 'build')
+        uses: actions/upload-artifact@v5
+        with:
+          name: preview
+          path: preview/
+          retention-days: 14
+      - name: Tell the owner when a run stops
+        if: failure() || cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          { echo "A run of the Instagram kit stopped. What happened and what to do:"; echo; echo '```';
+            cat FAILED.txt 2>/dev/null || echo "(no FAILED.txt: see the run log)"; echo '```'; echo; echo "Run: $RUN_URL"; } > issue.md
+          gh issue create --title "Rumo Instagram: a run stopped ($(date -u +%d\ %b))" --body-file issue.md
