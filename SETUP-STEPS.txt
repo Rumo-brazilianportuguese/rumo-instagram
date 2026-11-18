@@ -1,0 +1,54 @@
+RUMO INSTAGRAM — SETUP (one sitting, about 30-40 minutes, nothing to pay)
+
+You click everything yourself. Claude tells you where. Never paste a key into the chat.
+
+PART 1 — GITHUB (when your account is reinstated)
+ 1. github.com > + (top right) > New repository
+    Name: rumo-instagram   Visibility: Public   no README   > Create repository
+ 2. Claude gets the kit into it (Claude will say how; nothing to download).
+ 3. Repository > Actions tab: if asked, click "I understand my workflows, go ahead and enable them".
+
+PART 2 — THE INSTAGRAM KEY (Meta, with the Dylan De Roode Facebook account)
+ 4. developers.facebook.com > Get started > register as a developer (free; confirm by email or SMS).
+ 5. My Apps > Create app. Name: Rumo poster. Use case: Other. App type: Business. Create.
+    (The app stays in "development mode": that is fine for posting to your own account.)
+ 6. Tools > Graph API Explorer. Meta App: Rumo poster. User or Page: Get User Access Token.
+    Tick these permissions:
+      instagram_basic, instagram_content_publish, instagram_manage_insights,
+      pages_show_list, pages_read_engagement, business_management
+    > Generate Access Token. In the Facebook window: choose the Page
+    "Rumo - Brazilian Portuguese" and the Instagram account rumo.portuguese > Continue / Save.
+ 7. Make it long-lasting: click the small (i) next to the token > Open in Access Token Tool >
+    Extend Access Token > copy the new token.
+ 8. Back in Graph API Explorer: paste that token into the Access Token box. In the query box type
+      me/accounts?fields=name,access_token
+    > Submit. Copy the "access_token" shown under "Rumo - Brazilian Portuguese".
+    That is the Page key. It does not expire.
+ 9. Check it (optional): developers.facebook.com/tools/debug/accesstoken > paste > Debug.
+    "Expires: Never" = good.
+
+PART 3 — PUT THE KEY IN GITHUB'S SECRET STORE
+10. Repository > Settings > Secrets and variables > Actions > New repository secret
+    Name: META_TOKEN    Secret: paste the Page key   > Add secret.
+    Close the Graph API Explorer tab afterwards. Do not save the key anywhere else.
+
+PART 4 — FIRST RUNS (Actions > Rumo Instagram > Run workflow > choose > Run workflow)
+11. connect   (1-2 min)  green tick = key works, account found, Instagram can read our images.
+12. build     (about 10 min)  then open the run > Artifacts > preview > download, unzip,
+              open index.html. Look at the posts, play a Reel with sound. Tell Claude "go"
+              or what to change.
+13. launch    (before 12:00 UK)  posts 'Start here' now and tests a Reel upload.
+              Then, from your PERSONAL Instagram account, comment START on it and tell
+              Claude: "dm works" or "no dm".
+14. Done. From then on it posts every day at 18:00 UK by itself.
+    Day 3: pin the first three posts in the Instagram app.
+    Day 3-4: check that the first Reel's grid tile shows its cover.
+
+IF A RUN STOPS
+  GitHub emails you (it opens an issue with what happened and what to do). Show it to Claude.
+
+DON'T
+  - make the repository private
+  - change your Facebook password without telling Claude (it cancels the key; you then
+    repeat steps 6-10)
+  - remove the "Rumo poster" app in Meta

@@ -1,0 +1,14 @@
+{
+ "cta_mode": "comment",
+ "keyword": "START",
+ "preview_posts": 30,
+ "exclude": [
+  "cafézinho",
+  "pézinho"
+ ],
+ "cta_test": true,
+ "cta_test_weeks": 4,
+ "trial_reels": false,
+ "trial_auto": true,
+ "instagram_username": "rumo.portuguese"
+}

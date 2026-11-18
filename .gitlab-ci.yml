@@ -1,0 +1,32 @@
+# Rumo Instagram on GitLab (only if GitHub is not used). Create the schedules in
+# Build > Pipeline schedules, time zone Europe/London:
+#   "daily"  5 18 * * *     and a catch-up  35 20 * * *
+#   "trial"  5 12 * * 2,4   (variable RUMO_CMD = daily)
+# CI/CD variables (Settings > CI/CD > Variables, Masked + Protected):
+#   META_TOKEN       the Instagram key
+#   RUMO_PUSH_TOKEN  a personal access token with write_repository (to save progress)
+# Run by hand: Build > Pipelines > Run pipeline, variable RUMO_CMD = build | connect | launch | check
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"
+
+run:
+  image: mcr.microsoft.com/playwright/python:v1.55.0-noble
+  resource_group: rumo
+  timeout: 60m
+  variables:
+    RUMO_NO_BROWSER: "1"
+    GIT_DEPTH: "1"
+  script:
+    - git remote set-url origin "https://oauth2:${RUMO_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+    - git fetch -q origin "$CI_COMMIT_BRANCH" && git checkout -q -B "$CI_COMMIT_BRANCH" FETCH_HEAD
+    - pip install -r requirements.txt
+    - python -m playwright install chromium
+    - python rumo.py ${RUMO_CMD:-daily}
+  artifacts:
+    when: always
+    expire_in: 14 days
+    paths:
+      - preview/
+      - FAILED.txt
+      - DONE.txt

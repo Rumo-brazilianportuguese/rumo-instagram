@@ -1,0 +1,7 @@
+preview/
+cache/
+__pycache__/
+.venv/
+.run.lock
+posts.tmp
+*.pyc
