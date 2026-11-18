@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diminutivos &amp; aumentativos — cafezinho, carrão | Brazilian Portuguese grammar | Rumo</title>
+<meta name="description" content="Almost never about size: affection, politeness, sarcasm, intensity. Textbooks say -inho means &quot;small&quot;. In Brazil it almost never does. The diminutive is a.">
+<link rel="canonical" href="https://rumopt.com/Grammar/b2-diminutivos.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rumo">
+<meta property="og:title" content="Diminutivos &amp; aumentativos — cafezinho, carrão">
+<meta property="og:description" content="Almost never about size: affection, politeness, sarcasm, intensity. Textbooks say -inho means &quot;small&quot;. In Brazil it almost never does. The diminutive is a.">
+<meta property="og:url" content="https://rumopt.com/Grammar/b2-diminutivos.html">
+<meta property="og:image" content="https://rumopt.com/brand/rumo-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e1b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.ico?v=4" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../icons/mark.svg?v=4">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png?v=4">
+<link rel="stylesheet" href="../shared/style.css">
+<style>
+  section{display:block;}
+  .pn{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:26px 0 10px; font-size:.92rem;}
+  .pn a{color:var(--accent-deep); font-weight:700; text-decoration:none;} .pn a:hover{text-decoration:underline;}
+  .idx{columns:2; column-gap:28px; font-size:.9rem; line-height:1.7;} .idx a{color:var(--ink); text-decoration:none;} .idx a:hover{color:var(--accent-deep);}
+  .idx b{display:block; column-span:all; margin:10px 0 2px; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  @media(max-width:640px){.idx{columns:1;}}
+  .cta{margin:22px 0;}
+  .story .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+  footer{position:static; justify-content:center; flex-wrap:wrap; gap:8px 14px; padding:14px 12px 18px;}
+  main{margin-bottom:24px;}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Diminutivos & aumentativos — cafezinho, carrão", "about": "Brazilian Portuguese grammar", "inLanguage": "en", "isPartOf": {"@type": "Course", "name": "Rumo — Brazilian Portuguese, A1 to B2", "url": "https://rumopt.com/"}, "author": {"@type": "Organization", "name": "Rumo"}, "publisher": {"@type": "Organization", "name": "Rumo", "url": "https://rumopt.com"}, "mainEntityOfPage": "https://rumopt.com/Grammar/b2-diminutivos.html"}</script>
+<script>
+let ptVoice=null;
+const BR_PREFERRED=['francisca','thalita','brenda','luciana','maria','camila','vitoria','fernanda','ana'];
+function voiceScore(v){const name=(v.name||'').toLowerCase();const lang=(v.lang||'').replace('_','-');let s=0;if(lang==='pt-BR')s+=100;else if(lang.startsWith('pt'))s+=20;else return -1;if(/natural|neural/.test(name))s+=40;if(/google/.test(name))s+=25;const i=BR_PREFERRED.findIndex(n=>name.includes(n));if(i!==-1)s+=20-i;if(v.localService===false)s+=5;return s;}
+function pickVoice(){const vs=speechSynthesis.getVoices();if(!vs||!vs.length)return;let best=null,bs=-1;vs.forEach(v=>{const sc=voiceScore(v);if(sc>bs){bs=sc;best=v;}});ptVoice=bs>0?best:null;}
+if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+let timers=[];
+function stopPlay(){timers.forEach(clearTimeout);timers=[];if('speechSynthesis' in window)speechSynthesis.cancel();document.querySelectorAll('.sent.playing').forEach(x=>x.classList.remove('playing'));}
+function speak(t,rate){if(!('speechSynthesis' in window)){alert('No speech support in this browser — try Chrome or Edge.');return;}const u=new SpeechSynthesisUtterance(t);u.lang='pt-BR';try{if(ptVoice)u.voice=ptVoice;}catch(e){ptVoice=null;}u.rate=rate||0.97;u.pitch=1.05;speechSynthesis.speak(u);return u;}
+function say(t,slow){stopPlay();speak(t,slow?0.62:0.97);}
+function saySent(el){stopPlay();speak(el.textContent,0.85);}
+function playStory(rate){stopPlay();const sents=[...document.querySelectorAll('#story-text .sent')];let delay=0;sents.forEach(el=>{timers.push(setTimeout(()=>{document.querySelectorAll('.sent.playing').forEach(x=>x.classList.remove('playing'));el.classList.add('playing');speak(el.textContent,rate);},delay));delay+=Math.max(1400,el.textContent.length*(rate<0.8?95:62));});timers.push(setTimeout(stopPlay,delay+800));}
+function toggleTr(){const el=document.getElementById('story-text');el.classList.toggle('show-tr');document.getElementById('trbtn').textContent=el.classList.contains('show-tr')?'Hide translation':'Show translation';}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="badge">GRAMMAR LIBRARY · CHAPTER 54 OF 60 · B2 · LIÇÃO 34</span>
+    <h1>Diminutivos &amp; aumentativos — cafezinho, carrão</h1>
+    <div class="sub">Brazilian Portuguese grammar, chapter 54 of 60 · taught in Lição 34 · level B2. Almost never about size: affection, politeness, sarcasm, intensity.</div>
+  </div>
+</header>
+<nav><div class="wrap">
+  <a class="home" href="../curso.html" title="Course menu">⌂ Menu</a>
+  <span class="crumb">Diminutivos &amp; aumentativos — cafezinho, carrão</span>
+</div></nav>
+<main>
+<section>
+  <div class="card"><h3>What this is about</h3><p>Textbooks say <span class="pt">-inho</span> means "small". In Brazil it almost never does. The diminutive is a <b>tone of voice</b> that you glue onto a word: it softens a request, warms a greeting, shrinks bad news, and — the part that surprises everyone — it can also <em>intensify</em>. <span class="pt">Cedinho</span> is earlier than <span class="pt">cedo</span>. A <span class="pt">cafezinho</span> can come in a big mug. Learn the suffix as a social instrument and half of Brazilian warmth becomes available to you.</p></div>
+ <div class="card"><h3>The form — one question decides it</h3><p>Does the word end in an <b>unstressed vowel</b>? Drop that vowel, add <b>-inho / -inha</b>. Does it end in a <b>stressed vowel, in -e, or in a consonant</b>? Keep the whole word, add <b>-zinho / -zinha</b>.</p><table>
+ <tbody><tr><td class="pt">casa → cas<b>inha</b> · pouco → pouqu<b>inho</b> <button class="speak" onclick="say('casinha, pouquinho')">🔊</button></td><td>unstressed final vowel → -inho</td></tr>
+ <tr><td class="pt">café → café<b>zinho</b> · pé → pé<b>zinho</b> <button class="speak" onclick="say('cafezinho, pezinho')">🔊</button></td><td>stressed final vowel → -zinho</td></tr>
+ <tr><td class="pt">mãe → mãe<b>zinha</b> · flor → flor<b>zinha</b> <button class="speak" onclick="say('mãezinha, florzinha')">🔊</button></td><td>-e or a consonant → -zinho</td></tr>
+ <tr><td class="pt">amigo → ami<b>gu</b>inho · taça → ta<b>c</b>inha</td><td>spelling shifts so the SOUND never changes</td></tr></tbody></table>
+ <div class="tip"><b>Ear test, two seconds:</b> say the word slowly. If your voice lands on the last syllable — or the word ends in -e or a consonant — glue on <span class="pt">-zinho</span>. Otherwise chop the last vowel and add <span class="pt">-inho</span>.</div></div>
+ <div class="card"><h3>The five jobs — none of them "small"</h3><table>
+ <tbody><tr><td class="pt">Só um minut<b>inho</b>, amor<b>zinho</b>! <button class="speak" onclick="say('Só um minutinho, amorzinho')">🔊</button></td><td>affection / politeness</td></tr>
+ <tr><td class="pt">Posso fazer uma pergunt<b>inha</b>? <button class="speak" onclick="say('Posso fazer uma perguntinha?')">🔊</button></td><td>softening a request</td></tr>
+ <tr><td class="pt">Relaxa, é só um problem<b>inha</b>.</td><td>downplaying — damage control</td></tr>
+ <tr><td class="pt">Acordei ced<b>inho</b> e estava quent<b>inho</b>. <button class="speak" onclick="say('Acordei cedinho e estava quentinho')">🔊</button></td><td>INTENSITY: cedinho = earlier than cedo</td></tr>
+ <tr><td class="pt">Ah, que grac<b>inha</b>…</td><td>sarcasm — tone decides</td></tr></tbody></table>
+ <div class="tip"><b>The intensity job:</b> <span class="pt">juntinho</span> is closer than <span class="pt">junto</span>, <span class="pt">agorinha</span> is more urgent than <span class="pt">agora</span>, <span class="pt">rapidinho</span> is faster than <span class="pt">rápido</span>. The suffix that means "little" also means "very". Only context tells you which.</div></div>
+ <div class="card"><h3>The augmentative — -ão, -zão, -ona, -aço</h3><table>
+ <tbody><tr><td class="pt">Que carr<b>ão</b>! · Que gol<b>aço</b>! <button class="speak" onclick="say('Que carrão! Que golaço!')">🔊</button></td><td>size, but mostly admiration</td></tr>
+ <tr><td class="pt">Valeu, amig<b>ão</b>! <button class="speak" onclick="say('Valeu, amigão')">🔊</button></td><td>affection between men</td></tr>
+ <tr><td class="pt">Quero um cafe<b>zão</b>.</td><td>-zão when the word needs a buffer</td></tr>
+ <tr><td class="pt">a mulher<b>ona</b> · o gord<b>ão</b> · o chat<b>ão</b></td><td>⚠ on people this wounds far more easily than you expect</td></tr></tbody></table>
+ <div class="tip"><b>The safe split:</b> praise a <em>thing</em> with <span class="pt">-ão</span> (carrão, festão, golaço); praise a <em>person</em> with <span class="pt">-inho</span>. Bodies and the augmentative are a bad combination.</div></div>
+ <div class="card"><h3>Exceptions &amp; details</h3><p>1 · <b>Frozen diminutives are separate words.</b> <span class="pt">cafezinho</span> is the hospitality ritual, <span class="pt">pãozinho</span> is the bread roll, <span class="pt">cervejinha</span> is the social beer, <span class="pt">festinha</span> is the informal party, <span class="pt">jeitinho</span> is a whole cultural concept. Do not translate them as "small X" — learn them whole.<br>2 · <b>Plurals move the -z-:</b> <span class="pt">cafezinhos, florzinhas</span>, but the -ão words behave like their root: <span class="pt">pãozinho → pãezinhos</span>.<br>3 · <b>The diminutive as damage control.</b> When a Brazilian mentions <span class="pt">um probleminha</span>, <span class="pt">um atrasinho</span> or <span class="pt">uma continha</span>, the suffix is being kind, not precise. Ask politely for the number, the date, the detail.<br>4 · <b>It softens a no.</b> <span class="pt">Estou meio ocupadinho agora</span> is a refusal wearing a smile; <span class="pt">dou uma passadinha</span> is a modest offer of help.<br>5 · <b>Never in a formal e-mail.</b> <span class="pt">Gostaria de fazer uma pergunta</span> — not <em>uma perguntinha rapidinho</em>. Charm in speech, noise on paper.</p></div>
+  <div class="card cta">
+    <h3>Practise this chapter</h3>
+    <p style="margin-bottom:12px;">12 pool questions plus generated ones — 20 fresh practice questions, reshuffled every visit, inside the grammar library.</p>
+    <a class="btn" href="../Reference/PT-grammar.html#b2-diminutivos">Practise Diminutivos &amp; aumentativos — 20 questions →</a>
+    <p style="margin-top:12px;font-size:.9rem;color:var(--ink-soft);">This chapter is taught in <a href="../Lessons/PT-L34-diminutivos.html">Lição 34</a> of the course (level B2). <a href="../index.html">Rumo</a> is a complete Brazilian Portuguese course, A1 to B2; level A1 is free.</p>
+  </div>
+  <div class="pn">
+    <span>← <a href="b2-crase.html">Crase &amp; colocação pronominal — à, me liga</a></span>
+    <span><a href="b2-regencia.html">Regência verbal — gostar DE, confiar EM</a> →</span>
+  </div>
+  <div class="card"><h3>All 60 grammar chapters</h3><div class="idx"><b>Level A1</b><div><a href="ser-estar.html">Ser vs Estar — the two &quot;to be&quot;s</a></div><div><a href="pronouns.html">Subject pronouns</a></div><div><a href="gender.html">Noun gender &amp; articles</a></div><div><a href="contractions.html">Contractions: no, na, do, da</a></div><div><a href="ar-verbs.html">Regular -AR verbs (present)</a></div><div><a href="ter.html">TER — to have</a></div><div><a href="gostar-negation.html">gostar de + negation</a></div><div><a href="er-ir-verbs.html">Regular -ER / -IR verbs (present)</a></div><div><a href="power-verbs.html">The power verbs: querer, poder, fazer, ir</a></div><div><a href="questions.html">Question words</a></div><div><a href="future.html">The future: ir + infinitive</a></div><div><a href="numbers-time.html">Numbers, time &amp; days</a></div><div><a href="perfeito.html">Pretérito perfeito (regular past)</a></div><div><a href="perfeito-irregular.html">Irregular pasts: fui, tive, fiz…</a></div><div><a href="possessives.html">Possessives: meu, sua, dele…</a></div><div><a href="adjectives.html">Adjectives &amp; comparisons</a></div><div><a href="gerund.html">Present continuous: estar + gerund</a></div><div><a href="routine.html">Daily routine &amp; frequency</a></div><b>Level A2</b><div><a href="imperfeito.html">The imperfeito: era, tinha, morava</a></div><div><a href="object-pronouns.html">Object pronouns: me, te, comigo</a></div><div><a href="ficar-saber.html">Ficar, saber vs conhecer, este/esse/aquele</a></div><div><a href="health.html">Estar com, doer &amp; the body</a></div><div><a href="directions.html">The spoken imperative &amp; vir</a></div><div><a href="shopping.html">Quanto custa, colors &amp; demais</a></div><div><a href="weather.html">Weather with fazer, chover &amp; achar</a></div><div><a href="obligation.html">Ter que, precisar &amp; dever — the obligation scale</a></div><div><a href="narrative.html">Telling stories — estava + gerund &amp; the two pasts</a></div><div><a href="polite.html">Gostaria, queria &amp; poderia — the politeness ladder</a></div><div><a href="connectors.html">Que, porque &amp; se — connecting your thoughts</a></div><div><a href="spoken.html">Spoken Brazil — tá, tô, a gente &amp; the sound kit</a></div><b>Level B1</b><div><a href="b1-futuro.html">Futuro simples — morarei, farei</a></div><div><a href="b1-subjuntivo.html">Presente do subjuntivo — que eu fale</a></div><div><a href="b1-condicional.html">Condicional — moraria, faria</a></div><div><a href="b1-impsubjuntivo.html">Imperfeito do subjuntivo — se eu fosse</a></div><div><a href="b1-ppc.html">Tenho trabalhado — the lately-tense</a></div><div><a href="b1-debate.html">Opinions &amp; glue words — concordo, que, onde</a></div><div><a href="b1-futsubjuntivo.html">Futuro do subjuntivo — quando eu for</a></div><div><a href="b1-storytelling.html">Mais-que-perfeito &amp; reported speech</a></div><div><a href="b1-passiva.html">Voz passiva &amp; the se-pronoun</a></div><div><a href="b1-conectores.html">Advanced connectors — no entanto, caso</a></div><b>Level B2</b><div><a href="b2-3cond.html">Third conditional — se eu tivesse sabido</a></div><div><a href="b2-infpessoal.html">Infinitivo pessoal — para nós fazermos</a></div><b>Level A1</b><div><a href="formality.html">você, tu, o senhor — the three ways to say &quot;you&quot;</a></div><div><a href="pronunciation.html">Pronunciation &amp; written accents</a></div><div><a href="plurals.html">Making plurals — the full rules</a></div><div><a href="reflexives.html">Reflexive verbs — me levanto, se chama</a></div><b>Level A2</b><div><a href="ordinals.html">Ordinal numbers — primeiro, segundo, terceiro</a></div><div><a href="por-para.html">POR vs PARA — the great preposition duel</a></div><div><a href="tudo-todo.html">tudo vs todo — everything vs every</a></div><div><a href="mente-adverbs.html">Adverbs in -mente — rapidamente, felizmente</a></div><b>Level B1</b><div><a href="faz-time.html">Time with FAZ and HÁ — &quot;for two years&quot;, &quot;ago&quot;</a></div><div><a href="relative-pronouns.html">Relative pronouns — que, quem, onde, cujo</a></div><b>Level B2</b><div><a href="b2-crase.html">Crase &amp; colocação pronominal — à, me liga</a></div><div><strong>Diminutivos &amp; aumentativos — cafezinho, carrão</strong></div><div><a href="b2-regencia.html">Regência verbal — gostar DE, confiar EM</a></div><div><a href="b2-formal.html">O registro formal — Prezado senhor</a></div><div><a href="b2-giria.html">Gíria &amp; expressões — tá ligado?</a></div><div><a href="b2-dissertacao.html">A dissertação — em primeiro lugar</a></div><div><a href="b2-ironia.html">Ironia &amp; subtexto — Sei…</a></div><div><a href="b2-final.html">O mapa completo dos tempos verbais</a></div></div></div>
+</section>
+</main>
+<footer><span>Rumo · <a href="../index.html" style="color:inherit;">rumopt.com</a> · A1 is free forever</span><span><a href="../legal.html" style="color:inherit;">Legal, privacy &amp; refunds</a></span></footer>
+<script src="../shared/rumo-stats.js"></script>
+<script>if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){navigator.serviceWorker.register("../sw.js").catch(function(){});}</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ser vs Estar — the two &quot;to be&quot;s | Brazilian Portuguese grammar | Rumo</title>
+<meta name="description" content="Identity vs state: the most important distinction in Portuguese. English has one verb &quot;to be&quot;. Portuguese splits it into two, and the split carries real.">
+<link rel="canonical" href="https://rumopt.com/Grammar/ser-estar.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rumo">
+<meta property="og:title" content="Ser vs Estar — the two &quot;to be&quot;s">
+<meta property="og:description" content="Identity vs state: the most important distinction in Portuguese. English has one verb &quot;to be&quot;. Portuguese splits it into two, and the split carries real.">
+<meta property="og:url" content="https://rumopt.com/Grammar/ser-estar.html">
+<meta property="og:image" content="https://rumopt.com/brand/rumo-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e1b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.ico?v=4" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../icons/mark.svg?v=4">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png?v=4">
+<link rel="stylesheet" href="../shared/style.css">
+<style>
+  section{display:block;}
+  .pn{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:26px 0 10px; font-size:.92rem;}
+  .pn a{color:var(--accent-deep); font-weight:700; text-decoration:none;} .pn a:hover{text-decoration:underline;}
+  .idx{columns:2; column-gap:28px; font-size:.9rem; line-height:1.7;} .idx a{color:var(--ink); text-decoration:none;} .idx a:hover{color:var(--accent-deep);}
+  .idx b{display:block; column-span:all; margin:10px 0 2px; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  @media(max-width:640px){.idx{columns:1;}}
+  .cta{margin:22px 0;}
+  .story .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+  footer{position:static; justify-content:center; flex-wrap:wrap; gap:8px 14px; padding:14px 12px 18px;}
+  main{margin-bottom:24px;}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Ser vs Estar — the two \"to be\"s", "about": "Brazilian Portuguese grammar", "inLanguage": "en", "isPartOf": {"@type": "Course", "name": "Rumo — Brazilian Portuguese, A1 to B2", "url": "https://rumopt.com/"}, "author": {"@type": "Organization", "name": "Rumo"}, "publisher": {"@type": "Organization", "name": "Rumo", "url": "https://rumopt.com"}, "mainEntityOfPage": "https://rumopt.com/Grammar/ser-estar.html"}</script>
+<script>
+let ptVoice=null;
+const BR_PREFERRED=['francisca','thalita','brenda','luciana','maria','camila','vitoria','fernanda','ana'];
+function voiceScore(v){const name=(v.name||'').toLowerCase();const lang=(v.lang||'').replace('_','-');let s=0;if(lang==='pt-BR')s+=100;else if(lang.startsWith('pt'))s+=20;else return -1;if(/natural|neural/.test(name))s+=40;if(/google/.test(name))s+=25;const i=BR_PREFERRED.findIndex(n=>name.includes(n));if(i!==-1)s+=20-i;if(v.localService===false)s+=5;return s;}
+function pickVoice(){const vs=speechSynthesis.getVoices();if(!vs||!vs.length)return;let best=null,bs=-1;vs.forEach(v=>{const sc=voiceScore(v);if(sc>bs){bs=sc;best=v;}});ptVoice=bs>0?best:null;}
+if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+let timers=[];
+function stopPlay(){timers.forEach(clearTimeout);timers=[];if('speechSynthesis' in window)speechSynthesis.cancel();document.querySelectorAll('.sent.playing').forEach(x=>x.classList.remove('playing'));}
+function speak(t,rate){if(!('speechSynthesis' in window)){alert('No speech support in this browser — try Chrome or Edge.');return;}const u=new SpeechSynthesisUtterance(t);u.lang='pt-BR';try{if(ptVoice)u.voice=ptVoice;}catch(e){ptVoice=null;}u.rate=rate||0.97;u.pitch=1.05;speechSynthesis.speak(u);return u;}
+function say(t,slow){stopPlay();speak(t,slow?0.62:0.97);}
+function saySent(el){stopPlay();speak(el.textContent,0.85);}
+function playStory(rate){stopPlay();const sents=[...document.querySelectorAll('#story-text .sent')];let delay=0;sents.forEach(el=>{timers.push(setTimeout(()=>{document.querySelectorAll('.sent.playing').forEach(x=>x.classList.remove('playing'));el.classList.add('playing');speak(el.textContent,rate);},delay));delay+=Math.max(1400,el.textContent.length*(rate<0.8?95:62));});timers.push(setTimeout(stopPlay,delay+800));}
+function toggleTr(){const el=document.getElementById('story-text');el.classList.toggle('show-tr');document.getElementById('trbtn').textContent=el.classList.contains('show-tr')?'Hide translation':'Show translation';}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="badge">GRAMMAR LIBRARY · CHAPTER 1 OF 60 · A1 · LIÇÃO 1</span>
+    <h1>Ser vs Estar — the two &quot;to be&quot;s</h1>
+    <div class="sub">Brazilian Portuguese grammar, chapter 1 of 60 · taught in Lição 1 · level A1. Identity vs state: the most important distinction in Portuguese.</div>
+  </div>
+</header>
+<nav><div class="wrap">
+  <a class="home" href="../curso.html" title="Course menu">⌂ Menu</a>
+  <span class="crumb">Ser vs Estar — the two &quot;to be&quot;s</span>
+</div></nav>
+<main>
+<section>
+  <div class="card"><h3>What this is about</h3><p>English has one verb "to be". Portuguese splits it into two, and the split carries real meaning: <b>SER</b> tells us what something <b>IS</b> — its identity, essence, definition. <b>ESTAR</b> tells us how or where something is <b>RIGHT NOW</b> — a state, a mood, a location, a condition that can change. Brazilians hear the difference instantly: <span class="pt">ela é bonita</span> means she IS a beautiful woman; <span class="pt">ela está bonita</span> means she looks great today. Master this one distinction and half of A1 falls into place.</p>
+ <div class="tip"><b>Memory hook:</b> SER = eSsence · eSTAR = STATE. Ask "will this still be true next month?" Yes → ser. Maybe not → estar.</div></div><div class="card"><h3>SER (essence) <button class="speak" onclick="say('eu sou. você é. nós somos. eles são.')">🔊</button></h3><div class="conjrow"><span>eu</span><span class="pt">sou</span></div><div class="conjrow"><span>você / ele / ela</span><span class="pt">é</span></div><div class="conjrow"><span>nós</span><span class="pt">somos</span></div><div class="conjrow"><span>vocês / eles</span><span class="pt">são</span></div></div><div class="card"><h3>ESTAR (state) <button class="speak" onclick="say('eu estou. você está. nós estamos. eles estão.')">🔊</button></h3><div class="conjrow"><span>eu</span><span class="pt">estou</span></div><div class="conjrow"><span>você / ele / ela</span><span class="pt">está</span></div><div class="conjrow"><span>nós</span><span class="pt">estamos</span></div><div class="conjrow"><span>vocês / eles</span><span class="pt">estão</span></div></div><div class="card"><h3>When to use SER</h3><table>
+ <tbody><tr><td><b>identity &amp; name</b></td><td class="pt">Eu sou o Rafael. · Nós somos amigos. <button class="speak" onclick="say('Eu sou o Rafael. Nós somos amigos')">🔊</button></td></tr>
+ <tr><td><b>origin &amp; nationality</b></td><td class="pt">Eu sou inglês. · Ela é do Rio. <button class="speak" onclick="say('Eu sou inglês. Ela é do Rio')">🔊</button></td></tr>
+ <tr><td><b>profession</b></td><td class="pt">Ela é professora. · Ele é médico.</td></tr>
+ <tr><td><b>personality &amp; permanent traits</b></td><td class="pt">Ele é alto. · Ela é uma pessoa feliz.</td></tr>
+ <tr><td><b>time, dates, definitions</b></td><td class="pt">É uma hora. · Hoje é sábado. · Isso é um problema.</td></tr></tbody></table></div>
+ <div class="card"><h3>When to use ESTAR</h3><table>
+ <tbody><tr><td><b>feelings right now</b></td><td class="pt">Estou cansado. · Você está feliz hoje? <button class="speak" onclick="say('Estou cansado. Você está feliz hoje?')">🔊</button></td></tr>
+ <tr><td><b>location</b> (always!)</td><td class="pt">Ela está na praia. · Estamos em casa. <button class="speak" onclick="say('Ela está na praia. Estamos em casa')">🔊</button></td></tr>
+ <tr><td><b>temporary conditions</b></td><td class="pt">O café está frio. · A loja está fechada.</td></tr>
+ <tr><td><b>ongoing actions</b> (Lição 8)</td><td class="pt">Estou trabalhando agora.</td></tr></tbody></table></div>
+ <div class="card"><h3>The flip test — same adjective, two meanings</h3><table>
+ <tbody><tr><td class="pt">Ela é feliz. <button class="speak" onclick="say('Ela é feliz')">🔊</button></td><td>a happy person (by nature)</td></tr>
+ <tr><td class="pt">Ela está feliz. <button class="speak" onclick="say('Ela está feliz')">🔊</button></td><td>she is happy right now (mood)</td></tr>
+ <tr><td class="pt">O café é bom.</td><td>coffee (in general / this brand) is good</td></tr>
+ <tr><td class="pt">O café está bom.</td><td>THIS cup tastes good</td></tr>
+ <tr><td class="pt">Ele é doente.</td><td>he is a sickly person</td></tr>
+ <tr><td class="pt">Ele está doente.</td><td>he is ill at the moment</td></tr></tbody></table></div>
+ <div class="card"><h3>Exceptions &amp; details</h3><p>1 · <b>Location of EVENTS uses ser:</b> <span class="pt">A festa é na casa da Ana</span> — the party "is" there by definition (it happens there). People and things use estar: <span class="pt">Ana está na festa</span>.<br>2 · <b>Death is estar:</b> <span class="pt">Ele está morto</span> — grammar treats it as a state.<br>3 · <b>Spoken shortcuts:</b> estou → <span class="pt">tô</span>, está → <span class="pt">tá</span>: <span class="pt">Tô bem! Tá bom!</span> Recognize them; write the full forms.</p></div>
+  <div class="card cta">
+    <h3>Practise this chapter</h3>
+    <p style="margin-bottom:12px;">6 pool questions plus generated ones — 20 fresh practice questions, reshuffled every visit, inside the grammar library.</p>
+    <a class="btn" href="../Reference/PT-grammar.html#ser-estar">Practise Ser vs Estar — 20 questions →</a>
+    <p style="margin-top:12px;font-size:.9rem;color:var(--ink-soft);">This chapter is taught in <a href="../Lessons/PT-L01-ser-estar-first-words.html">Lição 1</a> of the course — free, no account needed. <a href="../index.html">Rumo</a> is a complete Brazilian Portuguese course, A1 to B2; level A1 is free.</p>
+  </div>
+  <div class="pn">
+    <span></span>
+    <span><a href="pronouns.html">Subject pronouns</a> →</span>
+  </div>
+  <div class="card"><h3>All 60 grammar chapters</h3><div class="idx"><b>Level A1</b><div><strong>Ser vs Estar</strong></div><div><a href="pronouns.html">Subject pronouns</a></div></div></div>
+</section>
+</main>
+<footer><span>Rumo · <a href="../index.html" style="color:inherit;">rumopt.com</a> · A1 is free forever</span><span><a href="../legal.html" style="color:inherit;">Legal, privacy &amp; refunds</a></span></footer>
+</body>
+</html>
